@@ -531,26 +531,27 @@ h2 {
   object-fit: cover;
 }
 
-/* ---------- Numbers (Handwerk redesigned cards) ---------- */
+/* ---------- Numbers (Clean transparent editorial layout) ---------- */
 .stats {
-  padding-block: clamp(70px, 8vw, 120px);
+  padding-block: clamp(64px, 7.5vw, 110px);
 }
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: clamp(24px, 3vw, 40px);
 }
 .stat {
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 28px 26px 32px;
+  background: transparent;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  padding: 24px 0 8px;
   display: flex;
   flex-direction: column;
 }
 .stat h3 {
-  font-size: 21px;
+  font-size: 20px;
   letter-spacing: -0.02em;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 .stat p {
   color: var(--muted);
@@ -558,14 +559,15 @@ h2 {
   line-height: 1.5;
 }
 .stat-num {
-  order: 3;
-  margin: auto 0 0;
-  padding-top: 34px;
-  font-size: clamp(54px, 5.2vw, 80px);
+  order: -1;
+  margin: 0 0 22px;
+  padding-top: 0;
+  font-size: clamp(48px, 4.8vw, 72px);
   font-weight: 300;
   letter-spacing: -0.05em;
   line-height: 1;
   font-variant-numeric: tabular-nums;
+  color: var(--ink);
 }
 
 /* ---------- Section heads ---------- */
@@ -956,21 +958,22 @@ h2 {
   background: var(--card);
 }
 
-/* ---------- Process (6 steps) ---------- */
+/* ---------- Process (6 steps - open transparent grid) ---------- */
 .process-section {
   padding-top: clamp(70px, 8vw, 110px);
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 .process-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: clamp(24px, 3.2vw, 44px);
 }
 .process-card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 26px;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  padding: 22px 0 8px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -989,38 +992,36 @@ h2 {
   color: var(--muted);
 }
 
-/* ---------- Projects (Handwerk stack) ---------- */
+/* ---------- Projects (Transparent editorial layout) ---------- */
 .work {
   padding-block: clamp(70px, 8vw, 120px) clamp(60px, 7vw, 100px);
 }
 .work-stack {
   display: flex;
   flex-direction: column;
-  gap: 14vh;
+  gap: clamp(48px, 6vw, 84px);
 }
 .work-sticky {
-  position: sticky;
-  top: max(24px, calc(50vh - 340px));
+  position: static;
 }
 .work-card {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 26px;
-  padding: 20px;
-  border-radius: var(--radius);
-  background: var(--card);
-  transform-origin: center top;
-  will-change: transform;
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.04);
+  gap: 28px;
+  padding: 36px 0 0;
+  border-radius: 0;
+  border-top: 1px solid var(--line);
+  background: transparent;
+  box-shadow: none;
 }
 .work-card.is-dark {
-  background: var(--dark);
-  color: var(--white);
+  background: transparent;
+  color: var(--ink);
 }
 .work-img {
   position: relative;
   aspect-ratio: 21 / 8;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
 }
 .work-img img {
@@ -1029,7 +1030,7 @@ h2 {
   object-fit: cover;
 }
 .work-body {
-  padding: 4px 14px 14px;
+  padding: 0;
 }
 .work-body h3 {
   font-size: clamp(26px, 2.8vw, 40px);
@@ -1042,7 +1043,7 @@ h2 {
   color: var(--muted);
 }
 .is-dark .work-text {
-  color: #b9b9c2;
+  color: var(--muted);
 }
 .tags {
   display: flex;
@@ -1053,12 +1054,15 @@ h2 {
 .tag {
   padding: 5px 14px;
   border-radius: 999px;
-  background: var(--dark-2);
-  color: var(--white);
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text);
   font-size: 14px;
 }
 .is-dark .tag {
-  background: var(--dark-3);
+  background: transparent;
+  border-color: var(--line);
+  color: var(--text);
 }
 .work blockquote {
   display: flex;
@@ -1076,7 +1080,7 @@ h2 {
   font-size: 17px;
 }
 .is-dark .person span {
-  color: #b9b9c2;
+  color: var(--text);
 }
 
 @media (min-width: 901px) {
@@ -1123,20 +1127,25 @@ h2 {
   margin-bottom: 24px;
 }
 .trust-card {
-  width: 170px;
-  height: 82px;
-  border-radius: 12px;
-  border: 1px solid var(--line);
-  background: var(--white);
+  width: 160px;
+  height: 76px;
+  border-radius: 0;
+  border: 0;
+  background: transparent;
   display: grid;
   place-items: center;
-  padding: 14px;
+  padding: 8px;
 }
 .trust-card img {
-  max-height: 48px;
+  max-height: 46px;
   max-width: 130px;
   object-fit: contain;
-  filter: grayscale(20%);
+  mix-blend-mode: multiply;
+  opacity: 0.78;
+  transition: opacity 0.2s;
+}
+.trust-card:hover img {
+  opacity: 1;
 }
 .t-marquee + .t-marquee {
   margin-top: 24px;
@@ -1149,17 +1158,18 @@ h2 {
 }
 .t-card {
   width: clamp(300px, 28vw, 390px);
-  min-height: 270px;
-  padding: 30px 32px;
-  border-radius: 12px;
-  background: var(--card-alt);
-  border: 1px solid var(--line);
+  min-height: 240px;
+  padding: 24px 8px 16px;
+  border-radius: 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--line);
   display: flex;
   flex-direction: column;
 }
 .t-card.is-alt {
-  background: var(--card);
-  border-color: var(--card);
+  background: transparent;
+  border-color: var(--line);
 }
 .t-card .stars {
   color: var(--ink);
@@ -1173,24 +1183,25 @@ h2 {
   margin-bottom: 24px;
 }
 
-/* ---------- Docs & Articles (#docs) ---------- */
+/* ---------- Docs & Articles (#docs - open transparent columns) ---------- */
 .docs-section {
   padding-block: clamp(70px, 8vw, 120px);
 }
 .docs-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: clamp(20px, 2.5vw, 36px);
 }
 .doc-card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 26px;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  padding: 22px 0 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 24px;
+  gap: 20px;
 }
 .doc-num {
   display: block;
@@ -1245,25 +1256,25 @@ h2 {
 .articles-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: clamp(22px, 2.8vw, 36px);
 }
 .article-card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s var(--ease), box-shadow 0.3s;
+  transition: transform 0.3s var(--ease);
 }
 .article-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
 }
 .article-img {
   aspect-ratio: 16 / 10;
   overflow: hidden;
+  border-radius: 14px;
   background: var(--card);
 }
 .article-img img {
@@ -1272,7 +1283,7 @@ h2 {
   object-fit: cover;
 }
 .article-body {
-  padding: 22px;
+  padding: 18px 0 0;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -1403,12 +1414,13 @@ h2 {
 .faq-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0;
 }
 .faq-item {
-  background: var(--soft);
-  border: 1px solid var(--line);
-  border-radius: 12px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
 }
 .faq-item button {
   width: 100%;
@@ -1416,14 +1428,14 @@ h2 {
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  padding: 24px 28px;
+  padding: 24px 0;
   text-align: left;
   font-size: clamp(17px, 1.5vw, 21px);
   font-weight: 500;
   letter-spacing: -0.015em;
 }
 .faq-item p {
-  padding: 0 60px 28px 28px;
+  padding: 0 40px 26px 0;
   font-size: clamp(15px, 1.3vw, 18px);
   line-height: 1.6;
   color: var(--muted);
